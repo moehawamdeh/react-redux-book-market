@@ -1,8 +1,10 @@
+/* eslint-disable comma-dangle */
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import themeReducer from '../features/darkmode/DarkModeSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    // eslint-disable-next-line comma-dangle
+    theme: themeReducer
   },
 });

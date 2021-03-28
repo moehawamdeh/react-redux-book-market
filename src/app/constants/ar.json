@@ -1,0 +1,14 @@
+{
+  "logo_name" : "آي تي بوك ناو",
+  "logo_slogan" : "متجر الكتب الرقمي",
+  "dark_theme" : "المظهر الليلي",
+  "lang_swap_text" : "English",
+  "search_text" : "البحث",
+  "search_hint" : "للبحث، يرجى كتابة ما تريده",
+  "cart_text" : "السلّة",
+  "fav_text" : "المفضلة",
+  "new_text" : "نزل حديثاً",
+  "results_hint" : " نتائج البحث عن ",
+  "no_results_hint" : " لا يوجد نتائج بحث حول ",
+  "details_text" : "التفاصيل"
+}

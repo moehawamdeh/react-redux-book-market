@@ -1,0 +1,14 @@
+{
+  "logo_name" : "ITBOOKNOW",
+  "logo_slogan" : "THE ONLINE BOOK STORE",
+  "dark_theme" : "Dark Mode",
+  "lang_swap_text" : "العربية",
+  "search_text" : "Search",
+  "search_hint" : "Search, Please Type in what you are looking for",
+  "cart_text" : "Cart",
+  "fav_text" : "Favourites",
+  "new_text" : "New",
+  "results_hint" : "Showing results for",
+  "no_results_hint" : "Ro results found for",
+  "details_text" : "Details"
+}
