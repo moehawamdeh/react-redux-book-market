@@ -7,13 +7,19 @@ import SearchResultsContainer from '../../components/SearchResultsContainer';
 import styled, { ThemeProvider } from 'styled-components';
 import NavBar from '../../components/NavBar';
 import DarkModeProvider from '../../features/darkmode/DarkModeProvider';
-import { Link } from 'react-router-dom';
-
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import SearchBox from '../../components/SearchBox';
 const ThemedContainer = styled(Col)`
 background-color: ${mainBackgroundColor};
 `;
 
 function MainPage () {
+  const search = useLocation().search;
+  const history = useHistory();
+  const query = new URLSearchParams(search).get('q');
+  const searchHandler = (text) => {
+    text.length && history.push('/main?q=' + text);
+  };
   return (
     <>
     <ThemeProvider theme={{ theme: 'dark' }}>
@@ -24,7 +30,8 @@ function MainPage () {
     <DarkModeProvider>
     <ThemedContainer className="px-4 py-4">
       <Row>
-        <SearchResultsContainer searchText="java"/>
+      <SearchBox callback={searchHandler}></SearchBox>
+        <SearchResultsContainer searchText={query}/>
         <NewBooksSideBar/>
       </Row>
     </ThemedContainer>

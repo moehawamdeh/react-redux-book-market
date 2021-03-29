@@ -9,19 +9,23 @@ import SearchResultsHint from './SearchResultsHint';
 function SearchResultsContainer ({ searchText }) {
   const [searchResult, setResult] = useState({ loading: true, books: [] });
   useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
     searchText && searchText.length &&
     fetch('/1.0/search/' + searchText, {
       Method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
-      }
+      },
+      signal
     })
       .then((res) => res.json()).then((response) => { setResult({ loading: false, books: response.books }); });
-  }, []);
+      return 
+  }, [searchText]);
   return (
         <ThemedCard className="shadow col px-3 mr-2" >
-          <Row clas sName="m-4">
+          <Row className="m-4">
             {!searchResult.loading && searchText && searchText.length && <SearchResultsHint text={searchText} found={searchResult.books.length > 0} />}
           </Row>
           <Row>

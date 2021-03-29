@@ -9,13 +9,13 @@ const LogoIcon = styled(BookHalf)`
 color: ${navTextColor};
 width: auto;
 `;
-const Horizantal = styled.div`
-color: ${navTextColor};
-`;
-const Sp = styled.span`
-color: ${navTextColor};
+  // const Vertical = styled.div`
+  // color: ${navTextColor};
+  // `;
+  // const Sp = styled.span`
+  // color: ${navTextColor};
 
-`;
+// `;
 // const Vertical = styled.div`
 
 // `;
@@ -25,6 +25,7 @@ function Logo ({ orientation, size }) {
   const sloganSize = size === 'large' ? logoSloganLargeSize : logoSloganSmallSize;
   const titleStyle = {
     fontSize: titleSize,
+    lineHeight: titleSize,
     fontFamily: 'Segoe UI',
     display: 'block'
   };
@@ -34,11 +35,11 @@ function Logo ({ orientation, size }) {
     marginTop: '12px!important'
   };
   return (orientation === 'vertical'
-    ? <Horizantal>
-    <LogoIcon size={logoSize}/>
-    <Sp style={titleStyle}><Text tid={'logo_name'}/></Sp>
-    <span style={sloganStyle}><Text tid={'logo_slogan'}/></span>
-  </Horizantal>
+    ? <div className="col justify-content-center" style={{ minHeight: '10px' }}>
+      <LogoIcon size={logoSize}/>
+        <p className="h2 justify-content-center m-y1" style={titleStyle}><Text tid={'logo_name'}/></p>
+        <p className="h3 justify-content-center m-y1" style={sloganStyle}><Text tid={'logo_slogan'}/></p>
+    </div>
     : <div className="row" style={{ alignItems: 'center' }}>
     <LogoIcon className="col" size={logoSize}/>
     <div className="col"><span className="row bp-2 mb-2" style={titleStyle}><Text tid={'logo_name'}/></span>

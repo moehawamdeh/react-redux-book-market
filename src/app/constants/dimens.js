@@ -1,8 +1,8 @@
-export const logoIconLargeSize = 200;
+export const logoIconLargeSize = '10vw';
 export const logoIconSmallSize = 70;
-export const logoTitleLargeSize = '70px';
+export const logoTitleLargeSize = '4vw';
 export const logoTitleSmallSize = '30px';
-export const logoSloganLargeSize = '36px';
+export const logoSloganLargeSize = '2.2vw';
 export const logoSloganSmallSize = '16px';
 export const searchHintSize = '34px';
 export const navItemIconSize = '44px';

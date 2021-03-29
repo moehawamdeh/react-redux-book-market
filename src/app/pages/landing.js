@@ -5,9 +5,9 @@ import { landingBackgroundColor, navTextColor } from '../../app/constants/colors
 import { Navbar } from 'react-bootstrap';
 import ApperanceControlsStrip from '../../components/ApperanceNavControls';
 import SearchBox from '../../components/SearchBox';
-import { Link } from 'react-router-dom';
 import Logo from '../../components/Logo';
 import DarkModeProvider from '../../features/darkmode/DarkModeProvider';
+import { Link, useHistory } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -28,18 +28,20 @@ const CenteredContainer = styled.div`
 `;
 
 function LandingPage () {
+  const history = useHistory();
+  const searchHandler = (text) => {
+    text.length && history.push('/main?q=' + text);
+  };
   return (
+    <DarkModeProvider>
     <Container className="App">
-      <DarkModeProvider>
             <ApperanceControlsStrip/>
             <CenteredContainer>
               <Logo size='large' orientation='vertical'/>
-              <Link to="/main">
-              <SearchBox></SearchBox>
-              </Link>
+              <SearchBox callback={searchHandler}></SearchBox>
             </CenteredContainer>
-            </DarkModeProvider>
     </Container>
+    </DarkModeProvider>
   );
 }
 
